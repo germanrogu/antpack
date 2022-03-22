@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { ContentPages } from "../ui/atoms/ContentPages/ContentPages";
 import { ListCardContainer } from "../ui/molecules/ListCardContainer/ListCardContainer";
 
 export const PrincipalPage = () => {
@@ -15,7 +16,11 @@ export const PrincipalPage = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [url]);
 
-  return <ListCardContainer items={users} />;
+  return (
+    <ContentPages>
+      <ListCardContainer items={users} />
+    </ContentPages>
+  );
 };
